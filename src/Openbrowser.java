@@ -5,7 +5,7 @@ public class Openbrowser {
 
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mahesh.kafle\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver(); // Launch Chrome
         driver.get("https://www.google.com/");
         String title = driver.getTitle();
