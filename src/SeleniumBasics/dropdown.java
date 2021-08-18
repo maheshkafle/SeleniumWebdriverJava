@@ -1,3 +1,5 @@
+package SeleniumBasics;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +15,7 @@ public class dropdown {
         driver.get("https://the-internet.herokuapp.com/dropdown");
         driver.manage().window().maximize();
 
-        WebElement dropdown = driver.findElement(By.id("dropdown"));
+        WebElement dropdown = driver.findElement(By.id("SeleniumBasics.dropdown"));
         Select dropdown_opt = new Select(dropdown);
         // index starts from 0
         dropdown_opt.selectByIndex(1);
