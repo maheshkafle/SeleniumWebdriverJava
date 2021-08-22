@@ -13,7 +13,7 @@ public class Waits {
 
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mahesh.kafle\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/login"); //https://the-internet.herokuapp.com/dynamic_loading/1
         driver.manage().window().maximize();
