@@ -30,6 +30,9 @@ public class TestNGBasics {
         System.out.println("Test");
     }
 
+    @AfterMethod
+    public void afterMethod(){ System.out.println("After Method"); }
+
     @AfterTest
     public void deleteAllCookies(){
         System.out.println("AfterTest");
