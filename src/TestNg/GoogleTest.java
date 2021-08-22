@@ -2,6 +2,7 @@ package TestNg;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,7 +15,7 @@ public class GoogleTest {
 
     @BeforeMethod
     public void setup() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mahesh.kafle\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         Thread.sleep(3000);
@@ -23,8 +24,10 @@ public class GoogleTest {
 
     @Test
     public void getTitleTest(){
-        String title = driver.getTitle();
-        System.out.println(title);
+        String expectedTitle = "Google";
+        String ActualTitle = driver.getTitle();
+        // System.out.println(ActualTitle);
+        Assert.assertEquals(expectedTitle, ActualTitle);
     }
 
     @AfterMethod
