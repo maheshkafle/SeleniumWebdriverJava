@@ -9,7 +9,7 @@ import static java.lang.Thread.*;
 
 public class HandleAlerts {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mahesh.kafle\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         WebElement alert_button = driver.findElement(By.xpath("//*[@id=\"content\"]/div/ul/li[1]/button"));
