@@ -1,5 +1,6 @@
 package SeleniumBasics;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +13,8 @@ public class ActionClassConcepts {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        // System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.edureka.co/");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

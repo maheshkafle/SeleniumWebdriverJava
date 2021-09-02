@@ -1,5 +1,6 @@
 package SeleniumBasics;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +9,8 @@ import org.openqa.selenium.WebElement;
 public class locators {
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        // System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(); // Launch Chrome
         driver.get("https://opensource-demo.orangehrmlive.com/"); //open the url
         String title = driver.getTitle(); // get title
@@ -48,5 +50,6 @@ public class locators {
         firstname_css.sendKeys("Admin");
         lastname_css.sendKeys("admin123");
 
+        driver.quit();
     }
 }

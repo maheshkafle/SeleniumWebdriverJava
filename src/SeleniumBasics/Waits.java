@@ -1,5 +1,6 @@
 package SeleniumBasics;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,9 +12,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Waits {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        // System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/login"); //https://the-internet.herokuapp.com/dynamic_loading/1
         driver.manage().window().maximize();
@@ -36,6 +38,9 @@ public class Waits {
         sendKeys(driver, lastname, 10, "SuperSecretPassword!");
 
         clickOn(driver, login, 10);
+
+        Thread.sleep(3000);
+        driver.quit();
 
     }
 
