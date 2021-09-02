@@ -14,7 +14,7 @@ public class WebDriverManagerConcept {
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://ui.cogmento.com/");
-        // driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
