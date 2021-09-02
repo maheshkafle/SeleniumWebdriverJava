@@ -18,8 +18,8 @@ public class FrameHandling {
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        driver.findElement(By.name("email")).sendKeys("maheshintech@gmail.com");
-        driver.findElement(By.name("password")).sendKeys("Makar555");
+        driver.findElement(By.name("email")).sendKeys("abc");
+        driver.findElement(By.name("password")).sendKeys("abc");
         driver.findElement(By.cssSelector(".fluid")).click();
         System.out.println("At this line");
 
