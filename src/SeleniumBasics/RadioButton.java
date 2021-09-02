@@ -1,5 +1,6 @@
 package SeleniumBasics;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,9 +10,10 @@ import java.util.List;
 
 public class RadioButton {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mahesh.kafle\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        // System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://seleniumpractise.blogspot.com/2016/08/how-to-automate-radio-button-in.html");
         List<WebElement> radio_btns = driver.findElements(By.xpath("//input[@name='lang' and @Type='radio']"));
@@ -21,6 +23,8 @@ public class RadioButton {
             System.out.println("value===>>>>>>>"+value);
             if(value.equalsIgnoreCase("RUBY")){
                 ele.click();
+                Thread.sleep(3000);
+                driver.quit();
             }
         }
     }

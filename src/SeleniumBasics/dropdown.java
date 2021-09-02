@@ -1,5 +1,6 @@
 package SeleniumBasics;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,12 +11,13 @@ import java.lang.Thread;
 public class dropdown {
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        // System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/dropdown");
         driver.manage().window().maximize();
 
-        WebElement dropdown = driver.findElement(By.id("SeleniumBasics.dropdown"));
+        WebElement dropdown = driver.findElement(By.id("dropdown"));
         Select dropdown_opt = new Select(dropdown);
         // index starts from 0
         dropdown_opt.selectByIndex(1);
@@ -29,5 +31,7 @@ public class dropdown {
 
         // visible text is case sensitive
         dropdown_opt.selectByVisibleText("Option 1");
+
+        driver.quit();
     }
 }
