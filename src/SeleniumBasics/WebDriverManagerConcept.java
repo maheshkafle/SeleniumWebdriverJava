@@ -22,6 +22,7 @@ public class WebDriverManagerConcept {
         driver.findElement(By.name("password")).sendKeys("abc");
         driver.findElement(By.cssSelector(".fluid")).click();
         System.out.println("At this line");
+        driver.quit();
 
     }
 }
