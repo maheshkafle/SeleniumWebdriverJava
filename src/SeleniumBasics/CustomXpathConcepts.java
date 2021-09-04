@@ -44,6 +44,7 @@ public class CustomXpathConcepts {
         // implementation
         // driver.findElement(By.xpath("*//input[starts-with(@class='button')]")).click();
         // driver.findElement(By.xpath("*//input[ends-with(@class='button')]")).click();
+        // Info *//a[contains(@text, 'Register')] function is specially used for links
         // driver.findElement(By.xpath("*//input[contains(@class='button')]")).click();
     }
 }
