@@ -2,6 +2,7 @@ package SeleniumBasics;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,15 +44,15 @@ public class Waits {
         driver.quit();
 
     }
-
-    public static void sendKeys(WebDriver driver1, WebElement element1, int timeout, String value1){
-        new WebDriverWait(driver1, timeout).until(ExpectedConditions.visibilityOf(element1));
-        element1.sendKeys(value1);
+    // Interview Question: ExplicitWait is for specific element or locator
+    public static void sendKeys(WebDriver driver1, WebElement locator1, int timeout, String value1){
+        new WebDriverWait(driver1, timeout).until(ExpectedConditions.visibilityOf(locator1));
+        locator1.sendKeys(value1);
 
     }
 
-    public static void clickOn(WebDriver driver2, WebElement element2, int timeout){
-        new WebDriverWait(driver2, timeout).until(ExpectedConditions.elementToBeClickable(element2));
-        element2.click();
+    public static void clickOn(WebDriver driver2, WebElement locator2, int timeout){
+        new WebDriverWait(driver2, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator2));
+        locator2.click();
     }
 }
