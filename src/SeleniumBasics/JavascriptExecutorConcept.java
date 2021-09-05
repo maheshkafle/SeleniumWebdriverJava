@@ -42,6 +42,8 @@ public class JavascriptExecutorConcept {
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(src, new File("C:\\Users\\mahesh.kafle\\IdeaProjects\\SeleniumWebdriverJava\\Screenshots\\logo.png"));
 
+        // generate Alert
+        generateAlert(driver, "There is an issue with login page");
 
     }
 
@@ -70,4 +72,11 @@ public class JavascriptExecutorConcept {
         js.executeScript("arguments[0].style.border = '3px solid red'", locator);
     }
 
+    public static void generateAlert(WebDriver driver, String message) throws InterruptedException {
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("alert('" + message + "')");
+        Thread.sleep(3000);
+        driver.switchTo().alert().dismiss();
+
+    }
 }
