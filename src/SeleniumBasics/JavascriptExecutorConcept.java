@@ -55,10 +55,16 @@ public class JavascriptExecutorConcept {
         // getTitle()
         System.out.println(getTitleByJs(driver));
 
-        //
+        // get all text present in webpage
         System.out.println(getPageInnerText(driver));
 
-        scrollPageDown(driver);
+        // scroll Page down
+        // scrollPageDown(driver);
+
+        // scrollpage till some webelement is visible
+        WebElement locator = driver.findElement(By.partialLinkText("OrangeHRM, Inc"));
+        scrollIntoView(locator, driver);
+
     }
 
     public static void flash(WebElement locator, WebDriver driver){
@@ -116,6 +122,11 @@ public class JavascriptExecutorConcept {
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
+    }
+
+    public static void scrollIntoView(WebElement locator, WebDriver driver){
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("arguments[0].scrollIntoView(true);", locator);
     }
 
 }
