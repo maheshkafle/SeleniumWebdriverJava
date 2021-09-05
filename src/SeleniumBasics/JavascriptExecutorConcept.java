@@ -1,16 +1,16 @@
 package SeleniumBasics;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class JavascriptExecutorConcept {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -32,16 +32,23 @@ public class JavascriptExecutorConcept {
         driver.findElement(By.name("txtUsername")).sendKeys("Admin");
         driver.findElement(By.name("txtPassword")).sendKeys("admin123");
         // driver.findElement(By.xpath("//input[contains(@value,'LOGIN')]")).click();
-       WebElement loginBtn =  driver.findElement(By.xpath("//input[contains(@value,'LOGIN')]"));
+        WebElement loginBtn =  driver.findElement(By.xpath("//input[contains(@value,'LOGIN')]"));
 
-       flash(loginBtn, driver);
+        flash(loginBtn, driver);
+        drawBorder(loginBtn, driver);
+
+        // takes screeenshot
+        // take screenshot and store it as a file format
+        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(src, new File("C:\\Users\\mahesh.kafle\\IdeaProjects\\SeleniumWebdriverJava\\Screenshots\\logo.png"));
+
 
     }
 
     public static void flash(WebElement locator, WebDriver driver){
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         String bgcolor = locator.getCssValue("backgroundColor");
-        for(int i=0; i< 10; i++){
+        for(int i=0; i< 1; i++){
             changeColor("rgb(0,0,200)", locator, driver);
             changeColor(bgcolor, locator, driver);
         }
@@ -57,4 +64,10 @@ public class JavascriptExecutorConcept {
 
         }
     }
+
+    public static void drawBorder(WebElement locator, WebDriver driver){
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("arguments[0].style.border = '3px solid red'", locator);
+    }
+
 }
