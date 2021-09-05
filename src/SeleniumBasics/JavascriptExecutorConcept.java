@@ -57,6 +57,8 @@ public class JavascriptExecutorConcept {
 
         //
         System.out.println(getPageInnerText(driver));
+
+        scrollPageDown(driver);
     }
 
     public static void flash(WebElement locator, WebDriver driver){
@@ -109,4 +111,11 @@ public class JavascriptExecutorConcept {
         String pageText = js.executeScript("return document.documentElement.innerText;").toString();
         return pageText;
     }
+
+    public static void scrollPageDown(WebDriver driver){
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+    }
+
 }
