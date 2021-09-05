@@ -43,8 +43,20 @@ public class JavascriptExecutorConcept {
         FileUtils.copyFile(src, new File("C:\\Users\\mahesh.kafle\\IdeaProjects\\SeleniumWebdriverJava\\Screenshots\\logo.png"));
 
         // generate Alert
-        generateAlert(driver, "There is an issue with login page");
+        // generateAlert(driver, "There is an issue with login page");
 
+        // refresh the page
+        // 1. using selenium
+        driver.navigate().refresh();
+
+        //2. using js
+        refreshBrowserByJs(driver);
+
+        // getTitle()
+        System.out.println(getTitleByJs(driver));
+
+        //
+        System.out.println(getPageInnerText(driver));
     }
 
     public static void flash(WebElement locator, WebDriver driver){
@@ -78,5 +90,23 @@ public class JavascriptExecutorConcept {
         Thread.sleep(3000);
         driver.switchTo().alert().dismiss();
 
+    }
+
+    public static void refreshBrowserByJs(WebDriver driver) throws InterruptedException {
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        Thread.sleep(3000);
+        js.executeScript("history.go(0)");
+    }
+
+    public static String getTitleByJs(WebDriver driver){
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        String title = js.executeScript("return document.title").toString();
+        return title;
+    }
+
+    public static String getPageInnerText(WebDriver driver){
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        String pageText = js.executeScript("return document.documentElement.innerText;").toString();
+        return pageText;
     }
 }
