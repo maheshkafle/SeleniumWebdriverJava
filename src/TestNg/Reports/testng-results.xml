@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-09-09T18:26:26Z" name="Default Suite" finished-at="2021-09-09T18:26:41Z" duration-ms="15563">
+    <groups>
+    </groups>
+    <test started-at="2021-09-09T18:26:26Z" name="SeleniumWebdriverJava" finished-at="2021-09-09T18:26:41Z" duration-ms="15563">
+      <class name="TestNg.GoogleTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestNg.GoogleTest@5b12b668]" started-at="2021-09-09T18:26:26Z" name="setup" finished-at="2021-09-09T18:26:33Z" duration-ms="7745" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="getTitleTest()[pri:1, instance:TestNg.GoogleTest@5b12b668]" started-at="2021-09-09T18:26:33Z" name="getTitleTest" finished-at="2021-09-09T18:26:33Z" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTitleTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNg.GoogleTest@5b12b668]" started-at="2021-09-09T18:26:33Z" name="tearDown" finished-at="2021-09-09T18:26:34Z" duration-ms="893" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestNg.GoogleTest@5b12b668]" started-at="2021-09-09T18:26:34Z" name="setup" finished-at="2021-09-09T18:26:40Z" duration-ms="5826" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="googleLogoTest()[pri:2, instance:TestNg.GoogleTest@5b12b668]" started-at="2021-09-09T18:26:40Z" name="googleLogoTest" finished-at="2021-09-09T18:26:40Z" duration-ms="65" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleLogoTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNg.GoogleTest@5b12b668]" started-at="2021-09-09T18:26:40Z" name="tearDown" finished-at="2021-09-09T18:26:41Z" duration-ms="1006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestNg.GoogleTest -->
+    </test> <!-- SeleniumWebdriverJava -->
+  </suite> <!-- Default Suite -->
+</testng-results>
