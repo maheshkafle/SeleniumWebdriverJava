@@ -30,10 +30,13 @@ public class GoogleTest {
         driver.get("http://google.com");
         System.out.println("Executed setup method");
     }
-    // Famous Interview Question: How will you ensure the execution order of the test cases
+
+    // Famous Interview Question: How will you ensure the execution order of the test cases?
     // Answer: We have keyword called priority, using this we can set the priority of our test cases
     // Also every time a test case is executed then along with this @before and @after annotations holding method will also run
-    @Test(priority = 1)
+    // Famous Interview Question: How will you define grouping in testNG test cases?
+    // Answer: We have "groups" keyword.
+    @Test(priority = 1,groups="Title")
     public void getTitleTest(){
         String expectedTitle = "Google";
         String ActualTitle = driver.getTitle();
@@ -42,11 +45,21 @@ public class GoogleTest {
         System.out.println("Executed getTitleTest method");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, groups="Logo")
     public void googleLogoTest(){
         boolean b = driver.findElement(By.className("lnXdpd")).isDisplayed();
         Assert.assertTrue(b);
         System.out.println("Executed googleLogoTest method");
+    }
+
+    @Test(priority = 3, groups="Test")
+    public void test1(){
+        System.out.println("Executed test1 method");
+    }
+
+    @Test(priority = 4, groups="Title")
+    public void test2(){
+        System.out.println("Executed test2 method");
     }
 
     @AfterMethod
