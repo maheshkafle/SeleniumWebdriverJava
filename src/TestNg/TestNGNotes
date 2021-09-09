@@ -1,0 +1,22 @@
+TestNG --unit testing framework
+		open source, free
+
+TDD -- Test Driven Framework 
+	
+advantage of TestNG  design test case in a systematic way
+--	can generate html reports
+--	provide different annotations
+--	with this define priorities/sequence of test cases
+--	dependency feature (one test case dependent on other test 	case)
+--	grouping of test cases
+-- 	if needed to test cases with different data (we can use 	dataprovider)
+
+
+
+available in JAR Files
+
+--(only applicable Java) unit testing framework
+
+installing TestNG in Intellij
+Method1 jar file
+Method2 TestNG dependency in maven project
