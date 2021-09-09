@@ -1,5 +1,7 @@
 package TestNg;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -16,7 +18,8 @@ public class GoogleTest {
 
     @BeforeMethod
     public void setup() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         // dynamic waits
@@ -25,18 +28,30 @@ public class GoogleTest {
 
         Thread.sleep(3000);
         driver.get("http://google.com");
+        System.out.println("Executed setup method");
     }
-
-    @Test
+    // Famous Interview Question: How will you ensure the execution order of the test cases
+    // Answer: We have keyword called priority, using this we can set the priority of our test cases
+    // Also every time a test case is executed then along with this @before and @after annotations holding method will also run
+    @Test(priority = 1)
     public void getTitleTest(){
         String expectedTitle = "Google";
         String ActualTitle = driver.getTitle();
         // System.out.println(ActualTitle);
         Assert.assertEquals(expectedTitle, ActualTitle);
+        System.out.println("Executed getTitleTest method");
+    }
+
+    @Test(priority = 2)
+    public void googleLogoTest(){
+        boolean b = driver.findElement(By.className("lnXdpd")).isDisplayed();
+        Assert.assertTrue(b);
+        System.out.println("Executed googleLogoTest method");
     }
 
     @AfterMethod
     public void tearDown(){
+        System.out.println("Executed teardown method");
         driver.quit();
     }
 
