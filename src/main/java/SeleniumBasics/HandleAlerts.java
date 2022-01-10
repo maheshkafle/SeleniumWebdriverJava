@@ -20,8 +20,14 @@ public class HandleAlerts {
         alert_button.click();
         Alert alert = driver.switchTo().alert();
         Thread.sleep(3000);
-        String alertMessage = driver.switchTo().alert().getText();
+        String alertMessage = alert.getText();
         System.out.println("Alert Message : "+ alertMessage);
+        if(alertMessage.equalsIgnoreCase("I am a JS prompt")){
+            System.out.println("Correct! Alert Message");
+        }
+        else {
+            System.out.println("Incorrect! Alert Message");
+        }
         alert.accept();
         //alert.dismiss(); // Hint: after execution of line no 26 it will click on cancel button of alert box.
         Thread.sleep(5000);
