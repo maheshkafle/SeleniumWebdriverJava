@@ -15,7 +15,7 @@ public class HandleFileUpload {
         driver.get("https://the-internet.herokuapp.com/upload");
         driver.manage().window().maximize();
         WebElement browseBtn = driver.findElement(By.xpath("//input[@id='file-upload']"));
-        browseBtn.sendKeys("C:\\Users\\kafle\\Downloads\\Resume - Ghanu Kafle.pdf");
+        browseBtn.sendKeys("Resume - xyz.pdf");
         WebElement UploadBtn = driver.findElement(By.xpath("//input[@id='file-submit']"));
         UploadBtn.click();
         WebElement div = driver.findElement(By.cssSelector("div[class='example'] h3"));
