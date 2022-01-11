@@ -26,7 +26,7 @@ public class BootstrapDropdownHandle {
 
         driver.findElement(By.className("btn-group")).click();
 
-        List<WebElement> list = driver.findElements(By.xpath("//ul[contains(@class, 'multiselect-container')]//li//a//label"));
+        List<WebElement> list = driver.findElements(By.xpath("//span[@class='multiselect-selected-text']"));
         System.out.println(list.size());
 
         for(int i=0; i<list.size(); i++){
