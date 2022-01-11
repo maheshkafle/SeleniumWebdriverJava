@@ -17,6 +17,7 @@ public class ActionClassConcepts {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.edureka.co/");
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         WebElement browse = driver.findElement(By.className("ga_browse_top_cat"));
         Actions builder = new Actions(driver);
